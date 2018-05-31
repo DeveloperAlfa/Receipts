@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import me.developeralfa.receipts.R;
 
@@ -19,18 +20,33 @@ public class MainFragment extends Fragment {
         return new MainFragment();
     }
 
+    Button save;
     @Nullable
     @Override
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.main_fragment, container, false);
+        View view =  inflater.inflate(R.layout.main_fragment, container, false);
+        save = view.findViewById(R.id.save);
+        return view;
+
+
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               View view =  v.findViewById(R.id.bill);
+               view.setDrawingCacheEnabled(true);
+            }
+        });
         // TODO: Use the ViewModel
     }
+
+
 
 }

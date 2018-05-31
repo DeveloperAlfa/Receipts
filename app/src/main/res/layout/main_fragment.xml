@@ -9,11 +9,17 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:id="@+id/bill"
+        app:layout_constraintTop_toTopOf="@id/main"
+        app:layout_constraintEnd_toEndOf="@id/main"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
         <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
             android:id="@+id/header"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.2">
 
@@ -21,8 +27,8 @@
                 android:id="@+id/imageView2"
                 android:layout_width="105dp"
                 android:layout_height="99dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:src="@tools:sample/backgrounds/scenic" />
@@ -57,9 +63,10 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.119" />
         </android.support.constraint.ConstraintLayout>
+
         <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
             android:id="@+id/container"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.8">
 
@@ -75,19 +82,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/button"
-                style="@android:style/Widget.Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="Add item"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+
         </android.support.constraint.ConstraintLayout>
 
 
     </LinearLayout>
+    <Button
+        android:id="@+id/button"
+        style="@android:style/Widget.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Add item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
